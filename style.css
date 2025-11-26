@@ -1,0 +1,109 @@
+/* style.css
+   Main styling for the GitHub Pages Map System
+*/
+
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --panel-bg: #f4f4f4;
+    --panel-border: #cccccc;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --bg: #1e1e1e;
+    --text: #e0e0e0;
+    --panel-bg: #2c2c2c;
+    --panel-border: #444444;
+}
+
+/* Black theme */
+[data-theme="black"] {
+    --bg: #000000;
+    --text: #ffffff;
+    --panel-bg: #111111;
+    --panel-border: #222222;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* Bottom directions panel */
+#directions-panel {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 35vh;
+    background: var(--panel-bg);
+    border-top: 2px solid var(--panel-border);
+    padding: 10px;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+/* Search bar */
+#search-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    padding: 8px;
+    border-radius: 6px;
+    z-index: 1000;
+    display: flex;
+    gap: 5px;
+}
+
+#search-input {
+    padding: 6px;
+    width: 260px;
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+}
+
+#search-btn {
+    padding: 6px 12px;
+    border: none;
+    background: #4285f4;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mobile mode */
+body.mobile-mode #directions-panel {
+    max-height: 50vh;
+    font-size: 1.2em;
+}
+
+body.mobile-mode #search-input {
+    width: 180px;
+}
+
+/* Compressed mode */
+body.compressed #directions-panel {
+    max-height: 18vh;
+    padding: 4px;
+    font-size: 0.8em;
+}
+
+body.compressed #search-container {
+    padding: 4px;
+}
