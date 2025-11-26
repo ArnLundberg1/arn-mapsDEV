@@ -34,41 +34,35 @@ body {
     overflow: hidden;
 }
 
+/* Container for map and UI */
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
 #map {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 0;
-}
-
-/* Bottom directions panel */
-#directions {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 320px;
-    max-width: 90%;
-    background: var(--panel-bg);
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    z-index: 100;
-    overflow-y: auto;
 }
 
 /* Sidebar */
 #sidebar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     width: 360px;
     max-width: 40%;
     padding: 12px;
-    box-sizing: border-box;
     background: var(--panel-bg);
-    overflow: auto;
-    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     z-index: 200;
+    overflow: auto;
 }
 
 #sidebar .control {
@@ -95,6 +89,22 @@ body {
     border: 1px solid var(--panel-border);
     padding: 8px;
     border-radius: 8px;
+}
+
+/* Directions panel */
+#directions {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 320px;
+    max-width: 90%;
+    background: var(--panel-bg);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    z-index: 300;
+    overflow-y: auto;
 }
 
 /* Mobile mode */
