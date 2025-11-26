@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kartsystem — GitHub Pages</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body data-theme="light">
+  <div id="container">
+    <div id="sidebar">
+      <h2>Kartsystem (GitHub Pages)</h2>
+      <div class="control">
+        <label class="small">Sök (adress eller funktion)</label><br>
+        <input id="search" type="text" placeholder="Sök..." />
+        <div id="suggestions"></div>
+      </div>
+
+      <div class="control">
+        <button id="recenter" class="btn">Recenter</button>
+        <button id="themeToggle" class="btn">Tema: Ljust</button>
+        <button id="mobileToggle" class="btn">Mobil-läge: Av</button>
+        <button id="compressToggle" class="btn">Compressed-mode: Av</button>
+      </div>
+
+      <div class="control">
+        <label class="small">Språk</label><br>
+        <select id="language">
+          <option value="sv">Svenska</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label class="small">Undvik städer (komma-separerat)</label><br>
+        <input id="avoidCities" type="text" placeholder="t.ex. Malmö, Uppsala" />
+      </div>
+
+      <div class="control">
+        <label class="small">Välj destination</label>
+        <div class="route-list" id="routeList">Inga rutter ännu.</div>
+      </div>
+
+      <div class="control">
+        <label class="small">Tullar & vägbetalningar</label>
+        <div id="tolls" class="small">Okänt</div>
+      </div>
+
+      <div class="control">
+        <label class="small">Trafik-händelser (Trafikverket)</label>
+        <div id="events" class="small">Laddar...</div>
+      </div>
+
+      <button id="reroute" class="btn">Räkna om rutter</button>
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+  <div id="directions" hidden>
+    <div id="directionsHeader"><strong>Färdbeskrivning</strong> — <span id="distTime"></span></div>
+    <ol id="directionsList"></ol>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
