@@ -40,70 +40,87 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 0;
 }
 
 /* Bottom directions panel */
-#directions-panel {
+#directions {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    max-height: 35vh;
-    background: var(--panel-bg);
-    border-top: 2px solid var(--panel-border);
-    padding: 10px;
-    overflow-y: auto;
-    z-index: 20;
-}
-
-/* Search bar */
-#search-container {
-    position: absolute;
-    top: 10px;
     left: 50%;
     transform: translateX(-50%);
+    min-width: 320px;
+    max-width: 90%;
     background: var(--panel-bg);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    z-index: 100;
+    overflow-y: auto;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 360px;
+    max-width: 40%;
+    padding: 12px;
+    box-sizing: border-box;
+    background: var(--panel-bg);
+    overflow: auto;
+    position: absolute;
+    z-index: 200;
+}
+
+#sidebar .control {
+    margin-bottom: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid var(--panel-border);
+    background: transparent;
+    color: var(--text);
+}
+
+.small {
+    font-size: 13px;
+}
+
+.route-list {
+    max-height: 200px;
+    overflow: auto;
     border: 1px solid var(--panel-border);
     padding: 8px;
-    border-radius: 6px;
-    z-index: 1000;
-    display: flex;
-    gap: 5px;
-}
-
-#search-input {
-    padding: 6px;
-    width: 260px;
-    border: 1px solid var(--panel-border);
-    border-radius: 4px;
-}
-
-#search-btn {
-    padding: 6px 12px;
-    border: none;
-    background: #4285f4;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 8px;
 }
 
 /* Mobile mode */
-body.mobile-mode #directions-panel {
+body.mobile #sidebar {
+    width: 220px;
+    padding: 6px;
+    opacity: 0.95;
+}
+
+body.mobile #directions {
     max-height: 50vh;
     font-size: 1.2em;
 }
 
-body.mobile-mode #search-input {
-    width: 180px;
+/* Compressed mode */
+body.compressed #sidebar {
+    width: 220px;
+    padding: 6px;
 }
 
-/* Compressed mode */
-body.compressed #directions-panel {
+body.compressed .btn {
+    padding: 6px;
+}
+
+body.compressed #directions {
     max-height: 18vh;
     padding: 4px;
     font-size: 0.8em;
-}
-
-body.compressed #search-container {
-    padding: 4px;
 }
